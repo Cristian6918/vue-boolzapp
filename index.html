@@ -66,7 +66,8 @@
                 </div>
                 <!-- contact list -->
                 <div id="contacts-list">
-                    <div v-for="(contact,contactIndex) in contacts" class=" ct-contact ct-h7v">
+                    <div v-for="(contact,contactIndex) in contacts" class=" ct-contact ct-h7v" @click="select(contact)"
+                        :class="selected(contactIndex)">
                         <div class="ct-image-section ct-h100">
                             <img :src="profile(contact)" class="ct-h100 rounded-circle" alt="contact.name">
                         </div>
@@ -90,7 +91,12 @@
             <div id="right-part">
                 <div class="ct-profile">
                     <div class="ct-image-section ct-h100 ct-w10">
-                        <img src="img-bolzapp/avatar_io.jpg" class="ct-h100 rounded-circle " alt="Sofia">
+                        <img :src='profile(selectedContact)' class="ct-h100 rounded-circle " alt="Sofia">
+                    </div>
+                    <div id="selected-info">
+                        <p class='m-0'>{{selectedContact.name}}</p>
+                        <p class='m-0 contact-last-message ct-secondary-text'>Ultimo accesso il
+                            {{lastDate(selectedContact)}}</ alle {{lastMessageTime(selectedContact)}} </p>
                     </div>
 
                     <div class="ct-header-icons justify-content-center">
@@ -108,6 +114,30 @@
                     </div>
 
                 </div>
+
+
+                <!-- messageBox  -->
+                <div id="message-box">
+
+                </div>
+
+                <!-- Message InputBox -->
+
+                <div id="input-box-message">
+                    <a class="input-box-message-buttons">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </a>
+                    <input type="search" name="" id="ct-input-message" class="ct-w80 "
+                        placeholder="scrivi un messaggio">
+                    <a class="input-box-message-buttons">
+                        <i class="fa-solid fa-microphone"></i>
+                    </a>
+
+
+
+
+                </div>
+
 
 
 

@@ -140,7 +140,13 @@ a.ct-image-section{
 #searchButton{
   justify-content: center;
   margin:0;
+  
 }
+
+.selected{
+  background-color: var(--selected-color);
+}
+
 
 
 
@@ -194,17 +200,58 @@ a.ct-image-section{
  align-items: flex-start;
 }
 
+#selected-info{
+  display:flex;
+  flex-direction: column;
+  
+}
+
 
 .selected{
   background-color: var(--selected-color);
 }
 
+#message-box{
+  background-image: url('img-bolzapp/mine.jpg');
+  width:100%;
+ flex-grow: 1;
+ overflow-y: auto;
+}
+#input-box-message{
+  display:flex;
+  height:7vh;
+  width:100%;
+  justify-self: flex-end;
+  align-items: center;
+}
+
+.input-box-message-buttons{
+  width:10%;
+  color:var(--ct-seconary-text-color);
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  justify-content: center;
+  color:#6B7376;
+}
+
+#ct-input-message{
+  outline:none;
+  border:none;
+  height:60%;
+  border-radius: 5px;
+  padding:0 10px;
+}
 
 
 /* Utilities */
 
 .ct-w10{
   width: 10%;
+}
+.ct-w80{
+  width:80%;
 }
 .ct-w90{
   width:80%;

@@ -165,14 +165,21 @@ let contacts = [
     }
 ];
 
-
+let elemIndex = 0;
 const app = new Vue({
     el: '#app',
     data: {
         contacts,
-
+        elemIndex,
+        selectedContact: contacts[elemIndex],
+        selectedChat: contacts[elemIndex].messages,
     },
     methods: {
+        select: function (contact) {
+            this.selectedContact = contact;
+            this.selectedChat = contact.messages;
+
+        },
         profile: function (contact) {
             return string = `img-bolzapp/avatar${contact.avatar}.jpg`
         },
@@ -185,7 +192,21 @@ const app = new Vue({
             let time = lastMessage.date.split(" ");
             let fixTime = time[1].split(":");
             return `${fixTime[0]}:${fixTime[1]}`;
+        },
+
+        lastDate: function (contact) {
+            let lastMessage = contact.messages[contact.messages.length - 1];
+            let time = lastMessage.date.split(" ");
+            return time[0];
+
+        },
+        selected: function (contactIndex) {
+            if (contactIndex === this.contacts.indexOf(this.selectedContact)) {
+                return 'selected';
+            }
+
         }
+
 
     }
 });
