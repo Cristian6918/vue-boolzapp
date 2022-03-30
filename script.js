@@ -193,6 +193,13 @@ const app = new Vue({
             let fixTime = time[1].split(":");
             return `${fixTime[0]}:${fixTime[1]}`;
         },
+        messageTime: function (message) {
+            let time = message.date.split(" ");
+            let hour = time[1].split(':');
+            return `${hour[0]}:${hour[1]}`;
+
+
+        },
 
         lastDate: function (contact) {
             let lastMessage = contact.messages[contact.messages.length - 1];

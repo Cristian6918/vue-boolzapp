@@ -203,7 +203,7 @@ a.ct-image-section{
 #selected-info{
   display:flex;
   flex-direction: column;
-  
+
 }
 
 
@@ -242,6 +242,24 @@ a.ct-image-section{
   height:60%;
   border-radius: 5px;
   padding:0 10px;
+}
+
+.ct-sent,
+.ct-received{
+ 
+  padding:10px;
+  max-width:50%;
+  border-radius:15px;
+}
+.ct-sent{
+   background-color: var(--ct-sent-color);
+   justify-self:flex-end;
+   margin-left:auto;
+}
+.ct-received{
+  background-color: white;
+  justify-content: flex-start;
+  margin-right:auto;
 }
 
 

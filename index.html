@@ -96,7 +96,8 @@
                     <div id="selected-info">
                         <p class='m-0'>{{selectedContact.name}}</p>
                         <p class='m-0 contact-last-message ct-secondary-text'>Ultimo accesso il
-                            {{lastDate(selectedContact)}}</ alle {{lastMessageTime(selectedContact)}} </p>
+                            {{lastDate(selectedContact)}} alle {{lastMessageTime(selectedContact)}}
+                        </p>
                     </div>
 
                     <div class="ct-header-icons justify-content-center">
@@ -117,7 +118,17 @@
 
 
                 <!-- messageBox  -->
-                <div id="message-box">
+                <div id="message-box" class="container p-5">
+                    <div class="d-flex mb-4" v-for="message in selectedChat">
+                        <div v-if="message.status==='received'" class="ct-received">
+                            <p>{{message.message}}</p>
+                            <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
+                        </div>
+                        <div v-else class="ct-sent">
+                            <p>{{message.message}}</p>
+                            <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
+                        </div>
+                    </div>
 
                 </div>
 
