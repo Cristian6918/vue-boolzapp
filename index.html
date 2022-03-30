@@ -22,14 +22,14 @@
             <!-- Left part of the box -- Contacts Part! -->
             <div id="left-part" class="">
                 <!-- Profile bar -->
-                <div id="my-profile" class="ct-bg-main-color ">
+                <div class="ct-bg-main-color ct-profile ">
                     <div class="ct-image-section ct-h100">
                         <img src="img-bolzapp/avatar_io.jpg" class="ct-h100 rounded-circle" alt="Sofia">
                     </div>
                     <span class="ct-name">Sofia</span>
 
 
-                    <div class="ct-header-icons">
+                    <div class="ct-header-icons justify-content-around">
                         <a href="#" class="ct-image-section ">
                             <i class="fa-solid fa-circle-notch  ct-secondary-text "></i>
                         </a>
@@ -49,7 +49,7 @@
                     <div class="ct-image-section ct-h100">
                         <i class="fa-solid fa-bell-slash rounded-circle bell "></i>
                     </div>
-                    <div class="ct-notification-text d-flex flex-column justify-content-center">
+                    <div id="ct-notification-text">
                         <p class="m-0">Ricevi notifiche di nuovi messagi</p>
                         <a href="#" class="ct-secondary-text m-0">Attiva notifiche</a>
 
@@ -58,12 +58,13 @@
 
                 <!-- search Bar -->
                 <div id="search-bar">
-                    <button id='search-button' class="m-0 ct-h100 ct-w10 justify-content-center"><i
+                    <button id='search-button' class="ct-h100 ct-w10 "><i
                             class="fa-solid fa-magnifying-glass ct-secondary-text "></i>
                     </button>
                     <input type="search" name="" id="search-input" class="ct-w90 "
                         placeholder="Cerca o inizia una nuova chat">
                 </div>
+                <!-- contact list -->
                 <div id="contacts-list">
                     <div v-for="(contact,contactIndex) in contacts" class=" ct-contact ct-h7v">
                         <div class="ct-image-section ct-h100">
@@ -86,7 +87,56 @@
 
             <!-- Right Part of the Box ---Message Part! -->
 
+            <div id="right-part">
+                <div class="ct-profile">
+                    <div class="ct-image-section ct-h100 ct-w10">
+                        <img src="img-bolzapp/avatar_io.jpg" class="ct-h100 rounded-circle " alt="Sofia">
+                    </div>
+
+                    <div class="ct-header-icons justify-content-center">
+                        <a href="#" class="ct-image-section ">
+                            <i class="fa-solid fa-magnifying-glass  ct-secondary-text "></i>
+                        </a>
+
+                        <a href="#" class="ct-image-section ">
+                            <i class="fa-solid fa-paperclip ct-secondary-text "></i>
+
+                        </a>
+                        <a href="#" class="ct-image-section ">
+                            <i class="fa-solid fa-ellipsis-vertical  ct-secondary-text  "></i>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </body>
