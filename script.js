@@ -165,6 +165,9 @@ let contacts = [
     }
 ];
 
+
+
+
 let elemIndex = 0;
 const app = new Vue({
     el: '#app',
@@ -173,26 +176,40 @@ const app = new Vue({
         elemIndex,
         selectedContact: contacts[elemIndex],
         selectedChat: contacts[elemIndex].messages,
+        string: '',
+
+        actualDate,
+        answear,
+
     },
     methods: {
+
+        //function for the contact selection
         select: function (contact) {
             this.selectedContact = contact;
             this.selectedChat = contact.messages;
 
         },
+        //Function for PROFILE PICTURE
         profile: function (contact) {
             return string = `img-bolzapp/avatar${contact.avatar}.jpg`
         },
+
+        //Show last message of a contact
         lastMessage: function (contact) {
             let lastMessage = contact.messages[contact.messages.length - 1];
             return lastMessage.message;
         },
+
+        //show the time of the last message
         lastMessageTime: function (contact) {
             let lastMessage = contact.messages[contact.messages.length - 1];
             let time = lastMessage.date.split(" ");
             let fixTime = time[1].split(":");
             return `${fixTime[0]}:${fixTime[1]}`;
         },
+
+        //show the time of the message
         messageTime: function (message) {
             let time = message.date.split(" ");
             let hour = time[1].split(':');
@@ -200,21 +217,61 @@ const app = new Vue({
 
 
         },
-
+        //show the last date of the message - Used for the last access!
         lastDate: function (contact) {
             let lastMessage = contact.messages[contact.messages.length - 1];
             let time = lastMessage.date.split(" ");
             return time[0];
 
         },
+
+        //Function for the class Selected
         selected: function (contactIndex) {
             if (contactIndex === this.contacts.indexOf(this.selectedContact)) {
                 return 'selected';
             }
 
-        }
+        },
 
 
-    }
+        //
+        addMessage(string) {
+            const toAdd = {
+                date: actualDate(),
+                message: string,
+                status: 'sent',
+            }
+            this.selectedChat.push(toAdd);
+            setTimeout(answear, 2000);
+            this.string = '';
+        },
+
+
+
+    },
+
+
+
+
+
+
 });
+
+function actualDate() {
+    let today = new Date();
+    let date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let dateTime = date + ' ' + time;
+    return dateTime;
+}
+
+
+function answear() {
+    const toAdd = {
+        date: actualDate(),
+        message: 'ok',
+        status: 'received',
+    }
+    app.selectedChat.push(toAdd);
+};
 

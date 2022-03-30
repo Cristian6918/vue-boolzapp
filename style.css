@@ -216,13 +216,16 @@ a.ct-image-section{
   width:100%;
  flex-grow: 1;
  overflow-y: auto;
+ overflow-x: hidden;
+ 
 }
 #input-box-message{
   display:flex;
-  height:7vh;
+  min-height:7vh;
   width:100%;
   justify-self: flex-end;
   align-items: center;
+  
 }
 
 .input-box-message-buttons{

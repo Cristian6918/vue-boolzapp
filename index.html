@@ -121,11 +121,11 @@
                 <div id="message-box" class="container p-5">
                     <div class="d-flex mb-4" v-for="message in selectedChat">
                         <div v-if="message.status==='received'" class="ct-received">
-                            <p>{{message.message}}</p>
+                            <p class="m-0">{{message.message}}</p>
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
                         </div>
                         <div v-else class="ct-sent">
-                            <p>{{message.message}}</p>
+                            <p class="m-0 ">{{message.message}}</p>
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
                         </div>
                     </div>
@@ -138,8 +138,8 @@
                     <a class="input-box-message-buttons">
                         <i class="fa-regular fa-face-smile"></i>
                     </a>
-                    <input type="search" name="" id="ct-input-message" class="ct-w80 "
-                        placeholder="scrivi un messaggio">
+                    <input type="text" name="" id="ct-input-message" class="ct-w80 " placeholder="scrivi un messaggio"
+                        v-model="string" v-on:keyup.enter="addMessage(string)">
                     <a class="input-box-message-buttons">
                         <i class="fa-solid fa-microphone"></i>
                     </a>
