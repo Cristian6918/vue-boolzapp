@@ -61,13 +61,13 @@
                     <button id='search-button' class="ct-h100 ct-w10 "><i
                             class="fa-solid fa-magnifying-glass ct-secondary-text "></i>
                     </button>
-                    <input type="search" name="" id="search-input" class="ct-w90 "
-                        placeholder="Cerca o inizia una nuova chat">
+                    <input type="search" name="" id="search-input" class="ct-w90 " v-model="filterString"
+                        v-on:keyup.enter="filter(filterString)" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contact list -->
                 <div id="contacts-list">
                     <div v-for="(contact,contactIndex) in contacts" class=" ct-contact ct-h7v" @click="select(contact)"
-                        :class="selected(contactIndex)">
+                        :class="selected(contactIndex)" v-if="contact.visible">
                         <div class="ct-image-section ct-h100">
                             <img :src="profile(contact)" class="ct-h100 rounded-circle" alt="contact.name">
                         </div>
@@ -125,7 +125,7 @@
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
                         </div>
                         <div v-else class="ct-sent">
-                            <p class="m-0 ">{{message.message}}</p>
+                            <p class="m-0 ciao ">{{message.message}}</p>
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
                         </div>
                     </div>

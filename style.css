@@ -44,7 +44,7 @@ body {
 }
 #left-part {
   height: 100%;
-  width: 35%;
+  min-width: 35%;
   display: flex;
   flex-direction: column;
   flex-grow:0;
@@ -163,6 +163,7 @@ a.ct-image-section{
   flex-direction: column;
   background-color: white;
   overflow-y:  scroll;
+  overflow-x: hidden;
 
 }
 
@@ -218,6 +219,7 @@ a.ct-image-section{
  overflow-y: auto;
  overflow-x: hidden;
  
+ 
 }
 #input-box-message{
   display:flex;
@@ -258,12 +260,14 @@ a.ct-image-section{
    background-color: var(--ct-sent-color);
    justify-self:flex-end;
    margin-left:auto;
+   word-wrap: break-word; 
 }
 .ct-received{
   background-color: white;
   justify-content: flex-start;
   margin-right:auto;
 }
+
 
 
 /* Utilities */

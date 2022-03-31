@@ -177,9 +177,11 @@ const app = new Vue({
         selectedContact: contacts[elemIndex],
         selectedChat: contacts[elemIndex].messages,
         string: '',
+        filterString: '',
 
         actualDate,
         answear,
+
 
     },
     methods: {
@@ -234,7 +236,7 @@ const app = new Vue({
         },
 
 
-        //
+        //Function to Write the msg in the Chat
         addMessage(string) {
             const toAdd = {
                 date: actualDate(),
@@ -244,6 +246,28 @@ const app = new Vue({
             this.selectedChat.push(toAdd);
             setTimeout(answear, 2000);
             this.string = '';
+        },
+
+        filter: function (filterString) {
+            const stringLow = filterString.toLowerCase();
+            console.log(stringLow);
+            if (filterString === '') {
+                contacts.forEach(element => {
+                    element.visible = true;
+                });
+            } else {
+                contacts.forEach(element => {
+                    const nameLow = element.name.toLowerCase();
+                    console.log(nameLow);
+                    if (!nameLow.includes(stringLow)) {
+                        element.visible = false;
+                    } else {
+                        element.visible = true;
+                    }
+
+                });
+            }
+            filterString = this.filterString;
         },
 
 
@@ -265,7 +289,7 @@ function actualDate() {
     return dateTime;
 }
 
-
+//Answear Function
 function answear() {
     const toAdd = {
         date: actualDate(),
@@ -274,4 +298,5 @@ function answear() {
     }
     app.selectedChat.push(toAdd);
 };
+
 
