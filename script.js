@@ -167,20 +167,21 @@ let contacts = [
 
 
 
-
+let screenLog = document.querySelector('#message-box');
 let elemIndex = 0;
 const app = new Vue({
     el: '#app',
     data: {
         contacts,
         elemIndex,
-        selectedContact: contacts[elemIndex],
-        selectedChat: contacts[elemIndex].messages,
+        selectedContact: undefined,
+        selectedChat: undefined,
         string: '',
         filterString: '',
 
         actualDate,
         answear,
+
 
 
     },
@@ -268,6 +269,9 @@ const app = new Vue({
             filterString = this.filterString;
         },
 
+        ordered(contacts) {
+
+        }
 
 
     },
@@ -298,4 +302,7 @@ function answear() {
 };
 
 
-console.log(actualDate())
+
+
+
+

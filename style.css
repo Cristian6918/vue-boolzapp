@@ -6,7 +6,7 @@
   --ct-sent-color: #d5f9ba;
   --ct-seconary-text-color: #ccbfb5;
   --selected-color: #e9ebeb;
-  --ct-white-color:white;
+  --ct-white-color: white;
 
 }
 
@@ -24,6 +24,7 @@
   z-index: 0;
   position: absolute;
 }
+
 body {
   background-color: var(--ct-bg-grey-color);
   height: 100vh;
@@ -34,7 +35,7 @@ body {
   width: 80%;
   height: 95vh;
   margin: auto;
- 
+
   z-index: 2;
   left: 10%;
   top: 3vh;
@@ -42,22 +43,24 @@ body {
   display: flex;
 
 }
+
 #left-part {
   height: 100%;
   min-width: 35%;
   display: flex;
   flex-direction: column;
-  flex-grow:0;
-  border-right:1px solid var(--ct-seconary-text-color);
+  flex-grow: 0;
+  border-right: 1px solid var(--ct-seconary-text-color);
 }
 
 #right-part {
   height: 100%;
+  max-width: 65%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 
-  
+
 }
 
 .ct-profile {
@@ -80,35 +83,35 @@ body {
   font-size: 1.2rem;
 }
 
-.ct-image-section{
-  padding:0.5em;
-  width:20%;
-  text-align:center;
-  display:flex;
+.ct-image-section {
+  padding: 0.5em;
+  width: 20%;
+  text-align: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
-a.ct-image-section{
+a.ct-image-section {
   text-decoration: none;
 }
 
 
-.ct-notification-bar{
+.ct-notification-bar {
   background-color: var(--ct-blue-color);
-  display:flex;
-  
+  display: flex;
+
 }
 
-#ct-notification-text{
-  display:flex;
+#ct-notification-text {
+  display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.bell{
-  color:var(--ct-blue-color);
+.bell {
+  color: var(--ct-blue-color);
   background-color: white;
   justify-self: center;
   height: 60%;
@@ -118,32 +121,33 @@ a.ct-image-section{
   justify-content: center;
 }
 
-#search-bar{
+#search-bar {
   height: 4vh;
   background-color: var(--ct-main-color);
- display:flex;
- width:100%;
- justify-content: center;
- align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
 }
+
 #search-button,
-#search-input{
+#search-input {
   outline: none;
-  border:none;
+  border: none;
   display: flex;
   align-items: center;
   background-color: white;
   height: 3vh;
 }
 
-#searchButton{
+#searchButton {
   justify-content: center;
-  margin:0;
-  
+  margin: 0;
+
 }
 
-.selected{
+.selected {
   background-color: var(--selected-color);
 }
 
@@ -151,144 +155,174 @@ a.ct-image-section{
 
 
 
- 
 
 
 
-#contacts-list{
-  width:100%;
-  overflow-y:auto;
- flex-grow: 1;
-  display:flex;
+
+#contacts-list {
+  width: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
   flex-direction: column;
   background-color: white;
-  overflow-y:  scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
 
 }
 
-.ct-contact{
-  display:flex;
-  border-top:1px solid var(--ct-seconary-text-color);
+.ct-contact {
+  display: flex;
+  border-top: 1px solid var(--ct-seconary-text-color);
   background-color: white;
-  cursor:pointer;
-  
-  
-  
+  cursor: pointer;
+
+
+
 }
-.ct-contact-info{
+
+.ct-contact-info {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-}
-.contact-name{
-  margin:0;
-}
-.contact-last-message{
-  font-size: 0.8rem;
-}
-.contact-time-message{
-  font-size:0.8rem;
-  align-self: flex-end;
-  width:10%;
-  height: 7vh;
-  justify-self: flex-end;
-  margin-left:auto;
- display: flex;
- justify-content: center;
- align-items: flex-start;
+
 }
 
-#selected-info{
-  display:flex;
+.contact-name {
+  margin: 0;
+}
+
+.contact-last-message {
+  font-size: 0.8rem;
+}
+
+.contact-time-message {
+  font-size: 0.8rem;
+  align-self: flex-end;
+  width: 10%;
+  height: 7vh;
+  justify-self: flex-end;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#selected-info {
+  display: flex;
   flex-direction: column;
 
 }
 
 
-.selected{
+.selected {
   background-color: var(--selected-color);
 }
 
-#message-box{
+#message-box {
   background-image: url('img-bolzapp/mine.jpg');
-  width:100%;
- flex-grow: 1;
- overflow-y: auto;
- overflow-x: hidden;
- 
- 
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+
 }
-#input-box-message{
-  display:flex;
-  min-height:7vh;
-  width:100%;
+
+#input-box-message {
+  display: flex;
+  min-height: 7vh;
+  width: 100%;
   justify-self: flex-end;
   align-items: center;
-  
+
 }
 
-.input-box-message-buttons{
-  width:10%;
-  color:var(--ct-seconary-text-color);
-  font-size:1.5rem;
-  display:flex;
-  align-items:center;
-  text-decoration:none;
+.input-box-message-buttons {
+  width: 10%;
+  color: var(--ct-seconary-text-color);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   justify-content: center;
-  color:#6B7376;
+  color: #6B7376;
 }
 
-#ct-input-message{
-  outline:none;
-  border:none;
-  height:60%;
+#ct-input-message {
+  outline: none;
+  border: none;
+  height: 60%;
   border-radius: 5px;
-  padding:0 10px;
+  padding: 0 10px;
 }
 
 .ct-sent,
-.ct-received{
- 
-  padding:10px;
-  max-width:50%;
-  min-width:20%;
-  border-radius:15px;
+.ct-received {
+  position: relative;
+  padding: 10px;
+  max-width: 50%;
+  min-width: 20%;
+  border-radius: 15px;
+
+  box-shadow: 0px 13px 22px 0px rgba(0, 0, 0, 0.17);
 }
-.ct-sent{
-   background-color: var(--ct-sent-color);
-   justify-self:flex-end;
-   margin-left:auto;
-   word-wrap: break-word; 
+
+.ct-sent {
+  background-color: var(--ct-sent-color);
+  justify-self: flex-end;
+  margin-left: auto;
+  word-wrap: break-word;
 }
-.ct-received{
+
+.ct-received {
   background-color: white;
   justify-content: flex-start;
-  margin-right:auto;
+  margin-right: auto;
+}
+
+.delete-message {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 2;
+  right: 0;
+  top: 90%;
+  display: none;
+}
+
+.delete-message p {
+  margin: 0;
+  text-align: center;
 }
 
 
 
 /* Utilities */
 
-.ct-w10{
+.ct-w10 {
   width: 10%;
 }
-.ct-w80{
-  width:80%;
+
+.ct-w80 {
+  width: 80%;
 }
-.ct-w90{
-  width:80%;
+
+.ct-w90 {
+  width: 80%;
 }
-.ct-w100{
+
+.ct-w100 {
   width: 100%;
 }
 
-.ct-h7v{
+.ct-h7v {
   height: 7vh;
 }
+
 .ct-h100 {
   height: 100%;
 }
@@ -296,7 +330,7 @@ a.ct-image-section{
 .ct-bg-main-color {
   background-color: var(--ct-main-color);
 }
+
 .ct-secondary-text {
   color: var(--ct-seconary-text-color);
 }
-

@@ -62,7 +62,7 @@
                             class="fa-solid fa-magnifying-glass ct-secondary-text " @click="filter(filterString)"></i>
                     </button>
                     <input type="search" name="" id="search-input" class="ct-w90 " v-model.trim="filterString"
-                        v-on:keyup.enter="filter(filterString)" placeholder="Cerca o inizia una nuova chat">
+                        v-on:keyup="filter(filterString)" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contact list -->
                 <div id="contacts-list">
@@ -91,11 +91,13 @@
             <div id="right-part">
                 <div class="ct-profile">
                     <div class="ct-image-section ct-h100 ct-w10">
-                        <img :src='profile(selectedContact)' class="ct-h100 rounded-circle " alt="Sofia">
+                        <img v-if="selectedContact!=undefined" :src='profile(selectedContact)'
+                            class="ct-h100 rounded-circle " alt="Sofia">
                     </div>
                     <div id="selected-info">
-                        <p class='m-0'>{{selectedContact.name}}</p>
-                        <p class='m-0 contact-last-message ct-secondary-text'>Ultimo accesso il
+                        <p class='m-0' v-if='selectedContact!=undefined'>{{selectedContact.name}}</p>
+                        <p class='m-0 contact-last-message ct-secondary-text' v-if="selectedContact!=undefined">Ultimo
+                            accesso il
                             {{lastDate(selectedContact)}} alle {{lastMessageTime(selectedContact)}}
                         </p>
                     </div>
@@ -119,15 +121,24 @@
 
                 <!-- messageBox  -->
                 <div id="message-box" class="container p-5">
-                    <div class="d-flex mb-4" v-for="message in selectedChat">
+                    <div class="d-flex mb-4" v-for="(message,indexM) in selectedChat">
                         <div v-if="message.status==='received'" class="ct-received">
                             <p class="m-0">{{message.message}}</p>
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
+                            <div class="delete-message">
+                                <p>Delete</p>
+                                <p>Info</p>
+                            </div>
                         </div>
                         <div v-else class="ct-sent">
-                            <p class="m-0 ciao ">{{message.message}}</p>
+                            <p class="m-0  ">{{message.message}}</p>
                             <p class="contact-last-message ct-secondary-text text-end m-0">{{messageTime(message)}}</p>
+                            <div class="delete-message">
+                                <p>Delete</p>
+                                <p>Info</p>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
