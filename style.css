@@ -254,6 +254,7 @@ a.ct-image-section{
  
   padding:10px;
   max-width:50%;
+  min-width:20%;
   border-radius:15px;
 }
 .ct-sent{

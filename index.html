@@ -59,9 +59,9 @@
                 <!-- search Bar -->
                 <div id="search-bar">
                     <button id='search-button' class="ct-h100 ct-w10 "><i
-                            class="fa-solid fa-magnifying-glass ct-secondary-text "></i>
+                            class="fa-solid fa-magnifying-glass ct-secondary-text " @click="filter(filterString)"></i>
                     </button>
-                    <input type="search" name="" id="search-input" class="ct-w90 " v-model="filterString"
+                    <input type="search" name="" id="search-input" class="ct-w90 " v-model.trim="filterString"
                         v-on:keyup.enter="filter(filterString)" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contact list -->

@@ -250,7 +250,6 @@ const app = new Vue({
 
         filter: function (filterString) {
             const stringLow = filterString.toLowerCase();
-            console.log(stringLow);
             if (filterString === '') {
                 contacts.forEach(element => {
                     element.visible = true;
@@ -258,7 +257,6 @@ const app = new Vue({
             } else {
                 contacts.forEach(element => {
                     const nameLow = element.name.toLowerCase();
-                    console.log(nameLow);
                     if (!nameLow.includes(stringLow)) {
                         element.visible = false;
                     } else {
@@ -300,3 +298,4 @@ function answear() {
 };
 
 
+console.log(actualDate())
