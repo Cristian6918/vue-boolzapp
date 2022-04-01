@@ -258,46 +258,66 @@ a.ct-image-section {
   padding: 0 10px;
 }
 
-.ct-sent,
-.ct-received {
+.ct-message {
   position: relative;
   padding: 10px;
   max-width: 50%;
   min-width: 20%;
   border-radius: 15px;
-
   box-shadow: 0px 13px 22px 0px rgba(0, 0, 0, 0.17);
 }
 
 .ct-sent {
   background-color: var(--ct-sent-color);
-  justify-self: flex-end;
   margin-left: auto;
   word-wrap: break-word;
 }
 
 .ct-received {
   background-color: white;
-  justify-content: flex-start;
   margin-right: auto;
+}
+
+.ct-dropDownIcon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  opacity: 0;
+
+}
+
+.ct-message:hover .ct-dropDownIcon {
+  opacity: 1;
 }
 
 .delete-message {
   position: absolute;
   width: 100px;
-  height: 50px;
-  border: 1px solid black;
+
   background-color: white;
   z-index: 2;
   right: 0;
   top: 90%;
-  display: none;
+  box-shadow: 0px 13px 22px 0px rgba(0, 0, 0, 0.17);
+  border-radius: 10px;
+
+
 }
 
 .delete-message p {
+  padding: 5px;
   margin: 0;
   text-align: center;
+  cursor: pointer;
+
 }
+
+.delete-message p:hover .deleteIcon {
+  color: red;
+}
+
+
+
 
 
 
